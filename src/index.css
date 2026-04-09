@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --prism-bg: #050A18;
+  --prism-cobalt: #2E5BFF;
+  --prism-cyan: #00F5FF;
+  --prism-deep: #0A142F;
+  --prism-glass: rgba(255, 255, 255, 0.03);
+  --prism-border: rgba(255, 255, 255, 0.08);
+  --prism-glow-cobalt: rgba(46, 91, 255, 0.15);
+  --prism-glow-cyan: rgba(0, 245, 255, 0.15);
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+}
+
+body {
+  margin: 0;
+  background-color: var(--prism-bg);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(circle at 0% 0%, var(--prism-glow-cobalt) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, var(--prism-glow-cyan) 0%, transparent 50%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Glassmorphism Components */
+.glass-card {
+  background: var(--prism-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--prism-border);
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+}
+
+.glow-text-cobalt {
+  text-shadow: 0 0 20px rgba(46, 91, 255, 0.4);
+}
+
+/* Animations */
+@keyframes pulse-cyan {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 245, 255, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 20px rgba(0, 245, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 245, 255, 0);
+  }
+}
+
+.pulse {
+  animation: pulse-cyan 2s infinite;
+}
+
+.btn-prism {
+  background: var(--prism-cobalt);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(46, 91, 255, 0.3);
+}
+
+.btn-prism:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(46, 91, 255, 0.5);
+  background: #3D69FF;
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: black !important;
+  backdrop-filter: blur(14px) saturate(200%);
+  border-radius: 16px !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  font-weight: 500;
+}
+
+.glass-input::placeholder {
+  color: black;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: var(--prism-cyan) !important;
+  box-shadow:
+    0 0 0 1px var(--prism-cyan),
+    0 0 25px rgba(0, 245, 255, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-1px);
+}
+
+.input-group-text-glass {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-right: none !important;
+  border-radius: 16px 0 0 16px !important;
+  color: var(--prism-cyan) !important;
+}
+
+.glass-input-with-icon {
+  border-left: none !important;
+  border-radius: 0 16px 16px 0 !important;
+}
+
+/* 📱 Mobile Laboratory Hub */
+@media (max-width: 768px) {
+  .display-3 {
+    font-size: 2.5rem !important;
+  }
+
+  .glass-card {
+    padding: 1.5rem !important;
+    backdrop-filter: blur(8px);
+    /* Performance boost for mobile GPUs */
+  }
+
+  .container-fluid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--prism-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--prism-border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--prism-cyan);
+}
