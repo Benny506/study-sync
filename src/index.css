@@ -1,23 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap');
 
 :root {
-  --prism-bg: #050A18;
-  --prism-cobalt: #2E5BFF;
-  --prism-cyan: #00F5FF;
-  --prism-deep: #0A142F;
-  --prism-glass: rgba(255, 255, 255, 0.03);
-  --prism-border: rgba(255, 255, 255, 0.08);
-  --prism-glow-cobalt: rgba(46, 91, 255, 0.15);
-  --prism-glow-cyan: rgba(0, 245, 255, 0.15);
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
+  --prism-bg: #FFFFFF;
+  --prism-cobalt: #2546e5;
+  --prism-cyan: #06e8fc;
+  --prism-deep: #F8FAFC;
+  --prism-glass: rgba(0, 0, 0, 0.03);
+  --prism-border: rgba(0, 0, 0, 0.08);
+  --prism-glow-cobalt: rgba(37, 70, 229, 0.08);
+  --prism-glow-cyan: rgba(6, 232, 252, 0.08);
+  --text-primary: #0F172A;
+  --text-secondary: #64748B;
+  --prism-surface: rgba(15, 23, 42, 0.04);
 }
 
 body {
   margin: 0;
   background-color: var(--prism-bg);
   color: var(--text-primary);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   background-image:
     radial-gradient(circle at 0% 0%, var(--prism-glow-cobalt) 0%, transparent 50%),
@@ -41,8 +42,19 @@ body {
 }
 
 .glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.prism-surface {
+  background: var(--prism-surface);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  transition: all 0.3s ease;
+}
+
+.prism-surface:hover {
+  background: rgba(15, 23, 42, 0.08);
+  border-color: rgba(15, 23, 42, 0.12);
 }
 
 .glow-text-cyan {

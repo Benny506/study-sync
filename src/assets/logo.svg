@@ -1,0 +1,22 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="prism-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2546e5" />
+      <stop offset="100%" style="stop-color:#06e8fc" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Outer Pulse Ring -->
+  <circle cx="100" cy="100" r="90" stroke="url(#prism-gradient)" stroke-width="2" stroke-dasharray="10 5" opacity="0.3" />
+  
+  <!-- Stylized 'S' Logic / Sync Flow -->
+  <path d="M70 140 C 40 140, 40 100, 70 80 L 130 60 C 160 40, 160 80, 130 80" stroke="url(#prism-gradient)" stroke-width="12" stroke-linecap="round" filter="url(#glow)" />
+  <path d="M130 60 C 160 60, 160 100, 130 120 L 70 140 C 40 160, 40 120, 70 120" stroke="url(#prism-gradient)" stroke-width="12" stroke-linecap="round" filter="url(#glow)" />
+  
+  <!-- Central Zap/Pulse -->
+  <path d="M90 70 L 115 100 L 85 100 L 110 130" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" />
+</svg>
